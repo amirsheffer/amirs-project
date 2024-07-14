@@ -24,10 +24,11 @@
 
 
 int ledPin = 4;
-long on_time = 100;
-long off_time = 100;
-int ledPin1 = LED_BUILTIN;
-
+int on_time = 10;
+int off_time = 10;
+//int ledPin1 = LED_BUILTIN;
+int ledPin1 = 12;
+int var = 0;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -39,9 +40,10 @@ void setup() {
 // the loop function runs over and over again forever
 void loop() {
   digitalWrite(ledPin, HIGH);
-  //digitalWrite(ledPin1, HIGH);                     // wait for a second
-  delayMicroseconds(on_time);
+  var = var + 1;    
+  digitalWrite(ledPin1, HIGH);                     // wait for a second
+  delay(on_time);
   digitalWrite(ledPin, LOW);  
-//  digitalWrite(ledPin1, LOW); // turn the LED off by making the voltage LOW
-  delayMicroseconds(off_time);                      // wait for a second
+  digitalWrite(ledPin1, LOW); // turn the LED off by making the voltage LOW
+  delay(off_time);                      // wait for a second
 }
