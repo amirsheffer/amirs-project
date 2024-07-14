@@ -30,8 +30,3 @@
 - led blinks when: you press the button
 - led is constant when: we are on menu mode
 - buzzer plays when: you click the button
-
-
-
-
-fcgdfgdfgdfgdf
