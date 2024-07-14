@@ -12,7 +12,7 @@
  - Use a variable to change built in led (13) to grove led (4)
  - Use a variable to change delay to 1 ms 
  - upload to arduino
- - can you see the led blink? Why?
+ - can you see the led blink? Why? too short of a time span
 
 ## Use logic analyzer to see and measure the blink
  - connect ADALM2000 to grove kit: 
@@ -21,19 +21,26 @@
  - open scopy program
  - connect to ADALM2000
  - open scopy logic analyzer
- - activate DIO0 and rising edge and run (why?)
+ - activate DIO0 and rising edge and run (so it looks nice (starts wi the a fall))
  - play with the scopy parameters until you can see the separate blinks. Which parameter(s) do you need to change?
  - use cursors and sample rate to measure the pulse width
  - take screenshots and add them to the README below.
+![alt text](50ms_reading-1.png)
+
+
 
 ## Measure overhead
  - Remove the delay statements and upload the code
- - Measure pulse width. What is the overhead?
- - Take screenshots and add them to the README below.
- - delay() is limited to 1 ms. Find a function that delays 1 microsecond. 
- - Try different delays and measure the overhead.
+ - Measure pulse width. What is the overhead? ~4us
  - Take screenshots and add them to the README below.
 
+
+![alt text](image.png)
+
+ - delay() is limited to 1 ms. Find a function that delays 1 microsecond. delayMicroseconds
+ - Try different delays and measure the overhead.
+ - Take screenshots and add them to the README below.
+![alt text](image-1.png)
 ## Git
  - Commit the new README with your screenshots
  - push to your repo.
