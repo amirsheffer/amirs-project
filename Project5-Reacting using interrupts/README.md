@@ -24,3 +24,28 @@ answer here: __________
 ## Exercises
  - commit and upload your code in this project folder.
 
+this is the code for the project 
+
+const int buttonPin = 2;  // Pin for the button
+const int ledPin = 4;     // Pin for the LED
+
+volatile bool ledState = false; // State of the LED
+
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP); // Set button pin as input with internal pull-up resistor
+  pinMode(ledPin, OUTPUT);           // Set LED pin as output
+  Serial.begin(9600);
+  // Attach interrupt to button pin, triggering on CHANGE
+  attachInterrupt(digitalPinToInterrupt(buttonPin), toggleLED, CHANGE);
+}
+
+void loop() {
+  // Main loop does nothing; LED state is handled in the interrupt
+}
+
+// Interrupt function to toggle LED state
+void toggleLED() {
+  ledState = !ledState; // Toggle the LED state
+  Serial.println(ledState);
+  digitalWrite(ledPin, ledState ? HIGH : LOW); // Write the new state to the LED
+}
