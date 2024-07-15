@@ -1,5 +1,8 @@
+// this code takes potential reading from the potentiometer pin and trasfroms it into LED lighting power. the way it works is through turning the LED on and off to create an illusion of dimmer lighting.
+
+
 const int potPin = A0; // Pin connected to the potentiometer
-const int ledPin = 9;  // Pin connected to the LED
+const int ledPin = 9;  // Pin connected to the LED. needed short pin 4 to pin 9 de to compitabilty
 
 void setup() {
   Serial.begin(9600); // Start the Serial communication at 9600 bps
