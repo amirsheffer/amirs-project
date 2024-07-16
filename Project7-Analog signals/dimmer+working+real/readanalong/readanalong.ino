@@ -7,7 +7,8 @@ const int ledPin = 9;  // Pin connected to the LED. needed short pin 4 to pin 9 
 void setup() {
   Serial.begin(9600); // Start the Serial communication at 9600 bps
   pinMode(ledPin, OUTPUT); // Set the LED pin as output
-}
+
+
 
 void loop() {
   int sensorValue = analogRead(potPin); // Read the potentiometer

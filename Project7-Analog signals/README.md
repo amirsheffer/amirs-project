@@ -34,7 +34,10 @@ the time it takes for the analog loop to run is around 100 usec
 - connect analog 2 in adalm (dark blue) to digital 7 in arduino
 - install Servo package if not already installed
 - initialize Servo package with pin 7
-- first check in adalm the range of the mapped values. What frequency is the Servo package using?
+- first check in adalm the range of the mapped values. What frequency is the Servo package using? it uses 50 Hz freq, and the duty cycle is between 3% to 12%
+
+
+![alt text](image-2.png)
 - connect to servo using D7 breakout (ground on the left on the side of the led). connect plus to servo
 - turn rotary to turn the servo
 - How does the range of the servo motor compare to the range of the rotary? Use the scope.
