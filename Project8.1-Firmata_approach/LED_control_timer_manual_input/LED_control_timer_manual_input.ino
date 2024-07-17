@@ -10,7 +10,7 @@ bool ledState = false;  // Track LED state
 void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(ledPin, OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
   attachInterrupt(digitalPinToInterrupt(buttonPin), turnOn, RISING); // inturpts the loop when you press the button
   MsTimer2::set(timerDuration, turnOff); // timer
 }

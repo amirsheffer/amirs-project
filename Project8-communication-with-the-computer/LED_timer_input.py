@@ -6,7 +6,7 @@ import serial
 import time
 
 serial_port = 'COM4'  # Adjust this for your setup
-ser = serial.Serial(serial_port, 9600, timeout=1)
+ser = serial.Serial(serial_port, 115200, timeout=1)
 time.sleep(2)  # Wait for the connection to establish
 
 layout = [
