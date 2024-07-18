@@ -4,9 +4,13 @@
 #include <Wire.h>
 #include <Servo.h>
 
+
+
+
+
+
 // Servo variables
 Servo myservo;  
-int pos = 0;    
 int fanPin = 7; 
 int fanState = LOW;
 int BuzzerState = LOW;
@@ -34,11 +38,20 @@ void setup() {
   myservo.attach(3); // Attach servo to pin 3
   pinMode(fanPin, OUTPUT);
 
-// buzer setup
+  // buzer setup
   pinMode(BuzzerPin, OUTPUT);
-
 }
+
+
 void loop() {
+
+
+  //record time_stamp in seconds 
+
+  unsigned long timestamp = millis() / 1000; 
+  Serial.print(timestamp);
+  Serial.print(",");
+
   // Makes fan rotate
   fanState = HIGH;
   digitalWrite(fanPin, fanState);
@@ -48,33 +61,33 @@ void loop() {
   
   // Map Z-axis acceleration from [-1, 1] to [180, 0]
   float angle = 180 - ((zAcceleration + 1) / 2 * 180); 
-
+  Serial.print(angle);
+  Serial.print(',');
   
 
   // Check angle for buzzer 
   if (angle > 100) {
     tone(BuzzerPin, 250); // Turn buzzer ON
+    Serial.println("On");
+    
+    
   } else {
     noTone(BuzzerPin); // Turn buzzer OFF
+    Serial.println("Off");
+   
   }
 
 // Set servo position to the calculated angle
   myservo.write(angle); 
 
+
   // Display information
   u8x8.setFont(u8x8_font_chroma48medium8_r); // Use smaller font
-  
-  // if (!LIS) {
-  //   u8x8.setCursor(0, 0);
-  //   u8x8.print("LIS3DHTR didn't connect.");
-  //   while (1);
-  // }
-
   u8x8.setCursor(0, 0);
   u8x8.print("Elevation angle:");  
   u8x8.setCursor(0, 1);
   u8x8.print(angle);
   u8x8.print(" degrees");
 
-  delay(100); // Smaller delay before the next update
+  delay(1000); // Smaller delay before the next update
 }
