@@ -4,7 +4,7 @@ const int buttonPin = 2;  // Pin for the button
 const int ledPin = 4;     // Pin for the LED
 #include <MsTimer2.h>
 
-unsigned long timerDuration = 5000; // Default timer duration
+unsigned long timerDuration = 10; // Default timer duration
 bool ledState = false;  // Track LED state
 
 void setup() {

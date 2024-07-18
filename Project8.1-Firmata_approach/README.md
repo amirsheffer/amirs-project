@@ -22,16 +22,21 @@
 
 ## Results ##
 Paste a screenshot of the GUI here:
+![alt text](image-1.png)
 
 Paste a screenshot of the logic analyzer here that presents the time the LED is ON when pressing the button.
-
+![alt text](image-2.png)
 ```
 What is the difference between the two versions of the script? Which one is more user interactive and why?
 
-Answer: __________
-
+Answer: the python version is simpler to understand and to write....
 
 What can you say about the accuracy of the timing between the firmata version and your arduino code version?
 which one is more accurate and why?
 
-Answer: __________
+
+
+
+the diffrence in acuracy in masuring times of 10 ms between the arduino to the computer only. the arduino is 1 orer of magnitude more accurate 
+
+![alt text](image.png)
